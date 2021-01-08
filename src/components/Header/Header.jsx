@@ -1,11 +1,11 @@
 import './Header.sass';
 
-const Header = () => {
+const Header = ({ step, decreaseStep }) => {
   return (
     <div className="header" >
-      <p className="header__text">{"<Atras"}</p>
+      <p className="header__text" onClick={decreaseStep}>{"<Atras"}</p>
       <h3 className="header__title">Registro</h3>
-      <p className="header__text header__text--steps">1/3</p>
+      <p className="header__text header__text--steps">{`${step + 1}/3`}</p>
     </div>
   )
 }

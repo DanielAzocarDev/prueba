@@ -20,7 +20,7 @@ const StepOne = ({ increaseStep, userData }) => {
 
     !data.email && (errors.email = "Este campo es obligatorio")
 
-    !data.email.match(re) && data.email ? (errors.email = "Correo no valido") : (errors.email = "Este campo es obligatorio")
+    !data.email.match(re) && (errors.email = "Correo no valido")
 
     !Number(data.phone) && data.phone !== "" ? (errors.phone = "Tiene que ser number no letras") : (errors.phone = "Este campo es obligatorio")
 
@@ -53,10 +53,7 @@ const StepOne = ({ increaseStep, userData }) => {
     // userData(data)
     console.log(data)
 
-
-    // increaseStep()
-
-
+    increaseStep()
   }
 
   return (

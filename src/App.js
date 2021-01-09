@@ -13,7 +13,7 @@ import './App.sass';
 
 function App() {
 
-  const [step, setStep] = useState(2)
+  const [step, setStep] = useState(0)
   const [user, setUser] = useState({})
 
   const increaseStep = () => {
@@ -21,14 +21,15 @@ function App() {
   }
 
   const decreaseStep = () => {
-    setStep(step - 1)
+    step === 0 ? (setStep(0)) : (setStep(step - 1))
   }
 
   const userData = (data) => {
     setUser({
       username: data.username,
       phone: data.phone,
-      pwd: data.pwd
+      pwd: data.pwd,
+      email: data.email
     })
 
     console.log(user)
@@ -40,7 +41,7 @@ function App() {
         <Header step={step} decreaseStep={decreaseStep} />
 
         {
-          step === 0 && <StepOne increaseStep={increaseStep} />
+          step === 0 && <StepOne increaseStep={increaseStep} userData={userData} />
         }
         {
           step === 1 && <StepTwo increaseStep={increaseStep} />

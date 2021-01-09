@@ -56,7 +56,7 @@ const StepThree = ({ userData }) => {
       <h2 className="stepthree__title">Escoge un nombre de usuario y una contraseña</h2>
       <p className="stepthree__text">Puedes cambiarlo más tarde.</p>
       <div className="stepthree__container">
-        <form className="stepthree__form" onClick={handlerSubmit} >
+        <form className="stepthree__form" >
           <div className="stepthree__form-control">
             <input className={!errors.username ? "stepthree__form_input" : "stepthree__form_input error"} type="text" name="username" id="username" placeholder="Nombre de usuario" onChange={handlerChange} value={data.username} />
             {errors.username && <span className="stepthree__form-error">{errors.username}</span>}
@@ -69,7 +69,7 @@ const StepThree = ({ userData }) => {
             <input className={!errors.pwd1 ? "stepthree__form_input" : "stepthree__form_input error"} type="password" name="pwd1" id="pwd1" placeholder="Confirma tu contraseña" onChange={handlerChange} value={data.pwd1} />
             {errors.pwd1 && <span className="stepthree__form-error">{errors.pwd1}</span>}
           </div>
-          <input className={data.username === "" ? "stepthree__form_btn inactive" : "stepthree__form_btn"} type="submit" value="Finalizar" />
+          <input className={data.username === "" ? "stepthree__form_btn inactive" : "stepthree__form_btn"} type="submit" value="Finalizar" onClick={handlerSubmit} />
         </form>
       </div>
     </div>

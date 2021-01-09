@@ -3,12 +3,11 @@
   height: 100%
   text-align: center
 
-  .text
+  &__text
     color: #c1c1c1
     font-size: 14px
+    margin: 25px auto
 
-  p
-    margin: 25px 0
   &__select
     margin-top: 40px
     border: none
@@ -44,7 +43,16 @@
     max-width: 100%
     padding: 30px 0
 
-    // border: 1px solid red
+    &-control
+      width: 100%
+      position: relative
+
+    &-error
+      font-size: 12px
+      color: #FC003C
+      position: absolute
+      left: 7%
+      bottom: 64%
 
     &_input
       min-width: 100%
